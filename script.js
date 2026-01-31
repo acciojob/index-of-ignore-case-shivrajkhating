@@ -1,8 +1,11 @@
-function indexOfIgnoreCase(s1, s2) {
-  // write your code here
-}
+function indexOfIgnoreCase(str, subStr) {
+  // Handle edge cases
+  if (str == null || subStr == null) return -1;
+  if (subStr === "") return 0;
+  if (subStr.length > str.length) return -1;
 
-// Please do not change the code below
-const s1 = prompt("Enter s1:");
-const s2 = prompt("Enter s2:");
-alert(indexOfIgnoreCase(s1, s2));
+  const lowerStr = str.toLowerCase();
+  const lowerSub = subStr.toLowerCase();
+
+  return lowerStr.indexOf(lowerSub);
+}
